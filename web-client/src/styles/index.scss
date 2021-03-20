@@ -1,0 +1,131 @@
+@import "./fonts";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: Rubik;
+  font-style: 16px;
+  line-height: 20px;
+}
+
+.join {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-form {
+    width: 400px;
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid #999;
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin: 10px 0;
+      color: #999;
+    }
+
+    input {
+      width: 100%;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      padding: 5px;
+      background-color: #eee;
+      border-radius: 5px;
+    }
+
+    button {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      padding: 7px;
+      background-color: rgb(34, 179, 89);
+      color: #fff;
+      border-radius: 5px;
+      margin-top: 15px;
+      cursor: pointer;
+
+      &:disabled {
+        background-color: #eee;
+        color: #999;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+.home {
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+
+  .messages {
+    height: auto;
+    flex: 1;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    .chat-message {
+      display: flex;
+      align-items: center;
+      margin: 5px;
+      padding: 7px;
+      border-radius: 7px;
+      border: 1px solid #999;
+
+      .avatar {
+        margin-right: 15px;
+        width: 60px;
+        height: 60px;
+        background: rgb(random(255), random(255), random(255));
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+      }
+      .message {
+        .name {
+          font-size: 16px;
+          font-weight: bold;
+          color: #333;
+        }
+        .date {
+          color: #999;
+          font-size: 11px;
+        }
+
+        .text {
+          color: #333;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+  .message {
+    padding: 5px;
+
+    input {
+      font-size: 16px;
+      width: 100%;
+      border: none;
+      outline: none;
+      padding: 5px;
+      border-radius: 5px;
+      background-color: #999;
+    }
+  }
+}
+
+.connecting {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
