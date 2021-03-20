@@ -13,22 +13,21 @@ const EVENTS = new Map([
   [
     "JOIN",
     (socket, payload) => {
-			let user = USERS.find(u=>u.name === payload.name);
-			
-			if(user) {
-				user = USERS.get(socket.id);
-				user.FIRSTTOME = false;
-			} else {
-				user = {
-					NAME: payload.NAME,
-					ROOM: payload.ROOM,
-					ONLINE: true,
-				}
-			}
+      let user = USERS.find((u) => u.name === payload.name);
 
-			USERS.set(socket.id, user);
-		}
-      
+      if (user) {
+        user = USERS.get(socket.id);
+        user.FIRSTTOME = false;
+      } else {
+        user = {
+          NAME: payload.NAME,
+          ROOM: payload.ROOM,
+          ONLINE: true,
+        };
+      }
+
+      USERS.set(socket.id, user);
+
       socket.emit("SEND", {
         ACTION: "WELCOME",
         PAYLOAD: {
